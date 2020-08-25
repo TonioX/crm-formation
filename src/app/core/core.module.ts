@@ -5,19 +5,27 @@ import { LoginModule } from '../login/login.module';
 import { TemplatesModule } from '../templates/templates.module';
 import { TextModule } from '../text/text.module';
 import { UiModule } from '../ui/ui.module';
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent, NavComponent, FooterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  exports:[
+  exports: [
     LoginModule,
     IconsModule,
     TextModule,
     TemplatesModule,
-    UiModule
+    UiModule,
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }
